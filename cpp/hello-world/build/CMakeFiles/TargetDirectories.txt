@@ -1,0 +1,3 @@
+/home/marcofavorito/Workfolder/my-exercism/cpp/hello-world/build/CMakeFiles/edit_cache.dir
+/home/marcofavorito/Workfolder/my-exercism/cpp/hello-world/build/CMakeFiles/hello-world.dir
+/home/marcofavorito/Workfolder/my-exercism/cpp/hello-world/build/CMakeFiles/rebuild_cache.dir

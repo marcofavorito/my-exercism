@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/marcofavorito/Workfolder/my-exercism/cpp/hello-world/build",
+  "command": "/usr/bin/c++     -std=c++11   -o CMakeFiles/hello-world.dir/hello_world_test.cpp.o -c /home/marcofavorito/Workfolder/my-exercism/cpp/hello-world/hello_world_test.cpp",
+  "file": "/home/marcofavorito/Workfolder/my-exercism/cpp/hello-world/hello_world_test.cpp"
+},
+{
+  "directory": "/home/marcofavorito/Workfolder/my-exercism/cpp/hello-world/build",
+  "command": "/usr/bin/c++     -std=c++11   -o CMakeFiles/hello-world.dir/hello_world.cpp.o -c /home/marcofavorito/Workfolder/my-exercism/cpp/hello-world/hello_world.cpp",
+  "file": "/home/marcofavorito/Workfolder/my-exercism/cpp/hello-world/hello_world.cpp"
+}
+]
