@@ -3,4 +3,4 @@ My Exercism solutions.
 
 ## Build Docker image
 
-      docker build -t exercism . --build-arg EXERCISM_TOKEN=<your-token>
+    docker build -t exercism . --build-arg EXERCISM_TOKEN=<your-token>
