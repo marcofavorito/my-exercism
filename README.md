@@ -5,9 +5,9 @@ My Exercism solutions.
 
 - build the image:
 
-    docker build -t exercism . --build-arg EXERCISM_TOKEN=<your-token>
+      ./build-img.sh <your-token>
 
 - run the container:
 
-    docker run -it -w /work -v "$(pwd):/work" exercism /bin/bash
+      ./run-img.sh
 
