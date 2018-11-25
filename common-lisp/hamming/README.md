@@ -1,18 +1,27 @@
-# Hello World
+# Hamming
 
-The classical introductory exercise. Just say "Hello, World!".
+Calculate the Hamming Distance between two DNA strands.
 
-["Hello, World!"](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program) is
-the traditional first program for beginning programming in a new language
-or environment.
+Your body is made up of cells that contain DNA. Those cells regularly wear out and need replacing, which they achieve by dividing into daughter cells. In fact, the average human body experiences about 10 quadrillion cell divisions in a lifetime!
 
-The objectives are simple:
+When cells divide, their DNA replicates too. Sometimes during this process mistakes happen and single pieces of DNA get encoded with the incorrect information. If we compare two strands of DNA and count the differences between them we can see how many mistakes occurred. This is known as the "Hamming Distance".
 
-- Write a function that returns the string "Hello, World!".
-- Run the test suite and make sure that it succeeds.
-- Submit your solution and check it at the website.
+We read DNA using the letters C,A,G and T. Two strands might look like this:
 
-If everything goes well, you will be ready to fetch your first real exercise.
+    GAGCCTACTAACGGGAT
+    CATCGTAATGACGGCCT
+    ^ ^ ^  ^ ^    ^^
+
+They have 7 differences, and therefore the Hamming Distance is 7.
+
+The Hamming Distance is useful for lots of things in science, not just biology, so it's a nice phrase to be familiar with :)
+
+# Implementation notes
+
+The Hamming distance is only defined for sequences of equal length, so
+an attempt to calculate it between sequences of different lengths should
+not work. The general handling of this situation (e.g., raising an
+exception vs returning a special value) may differ between languages.
 
 ## Setup
 
@@ -62,7 +71,7 @@ with the REPL; making iterative coding and testing very easy.
 
 ## Source
 
-This is an exercise to introduce users to using Exercism [http://en.wikipedia.org/wiki/%22Hello,_world!%22_program](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program)
+The Calculating Point Mutations problem at Rosalind [http://rosalind.info/problems/hamm/](http://rosalind.info/problems/hamm/)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
