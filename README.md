@@ -3,11 +3,15 @@ My Exercism solutions.
 
 ## Using the Docker image
 
-- build the image:
+- build the Exercism image:
 
-      ./build-img.sh <your-token>
+      python build-img.py --build-exercism <your-token>
+
+- build all the subimages:
+
+      python build-img.py --all
 
 - run the container:
 
-      ./run-img.sh
+      ./run-img.sh <track>
 
