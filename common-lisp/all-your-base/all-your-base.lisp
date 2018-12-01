@@ -37,7 +37,6 @@
 	(if (= (length result) 0) (list 0 ) result)))
 
 (defun rebase (list-digits in-base out-base)
-  (print (input-is-valid list-digits in-base out-base))
   (when (input-is-valid list-digits in-base out-base)
     (dec-to-base (base-to-10 list-digits in-base) out-base)))
 
