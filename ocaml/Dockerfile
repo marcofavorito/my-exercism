@@ -19,11 +19,11 @@ RUN opam init
 
 RUN opam switch 4.07.0
 RUN eval `opam config env`
-RUN printenv OCAML_TOPLEVEL_PATH
+#RUN printenv OCAML_TOPLEVEL_PATH
 
 RUN opam install core utop
-RUN opam install async yojson core_extended core_bench cohttp async_graphics cryptokit menhir
-RUN opam install base core_kernel ounit utop core
+RUN opam install base core_kernel ounit 
+#RUN opam install async yojson core_extended core_bench cohttp async_graphics cryptokit menhir
 
 ###########################################################
 

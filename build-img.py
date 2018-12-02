@@ -9,6 +9,9 @@ TRACKS.difference_update(IGNORE_DIRS)
 
 
 parser = argparse.ArgumentParser(prog="build-images", description="Build Docker images for my-exercism repository.")
+
+parser.add_argument("--force", action="store_true", default=False)
+
 exercism_builder_group = parser.add_mutually_exclusive_group(required=False)
 exercism_builder_group.add_argument("--token", type=str)
 exercism_builder_group.add_argument("--config-file", type=str, default="config.json")
@@ -22,10 +25,10 @@ def _build_docker_exercism(token):
     os.system("docker build -t exercism . --build-arg EXERCISM_TOKEN={}"
             .format(token))
 
-def _build_docker_subdirs(subdirs):
+def _build_docker_subdirs(subdirs, force=False):
     for subdir in subdirs:
         if subdir in IGNORE_DIRS: continue
-        os.system(" docker build -t exercism-{0} -f {0}/Dockerfile {0}".format(subdir))
+        os.system(" docker build {1} -t exercism-{0} -f {0}/Dockerfile {0}".format(subdir, "--no-cache" if force else ""))
 
 def _read_token_from_config_file(config_file):
     return json.loads(open("config.json").read())["token"]
@@ -43,11 +46,14 @@ if __name__ == "__main__":
         if token:
             print("Configuring exercism with token={}".format(token))
             _build_docker_exercism(token)
-
+        
+        images = None
         if args.all:
-            _build_docker_subdirs(TRACKS)
+            images = TRACKS
         elif args.subimages:
-            _build_docker_subdirs(args.subimages)
+            images = args.subimages
+        
+        _build_docker_subdirs(images, force=args.force)
 
     except Exception as e:
         print(str(e))
