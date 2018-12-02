@@ -26,7 +26,7 @@ WORKDIR /home/default
 
 # install exercism
 ARG EXERCISM_TOKEN
-RUN sudo apt-get install -y nano vim wget
+RUN sudo apt-get install -y nano vim wget curl gcc cmake
 RUN mkdir exercism && \
     cd exercism && \
     wget https://github.com/exercism/cli/releases/download/v3.0.11/exercism-linux-64bit.tgz && \

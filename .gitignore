@@ -39,3 +39,6 @@
 .vscode
 build/
 *.swp
+*.swo
+*~
+config.json
