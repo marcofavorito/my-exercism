@@ -42,3 +42,6 @@ build/
 *.swo
 *~
 config.json
+
+#ocaml
+**/_build/*
