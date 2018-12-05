@@ -14,7 +14,7 @@ parser.add_argument("--force", action="store_true", default=False)
 
 exercism_builder_group = parser.add_mutually_exclusive_group(required=False)
 exercism_builder_group.add_argument("--token", type=str)
-exercism_builder_group.add_argument("--config-file", type=str, default="config.json")
+exercism_builder_group.add_argument("--config", type=str, default="config.json")
 
 subimage_group = parser.add_mutually_exclusive_group(required=True)
 subimage_group.add_argument("--all",  action='store_true')
@@ -40,8 +40,8 @@ if __name__ == "__main__":
         args = parser.parse_args()
         if args.token:
             token = args.token
-        elif args.config_file:
-            token = _read_token_from_config_file(args.config_file)
+        elif args.config:
+            token = _read_token_from_config_file(args.config)
         
         if token:
             print("Configuring exercism with token={}".format(token))
