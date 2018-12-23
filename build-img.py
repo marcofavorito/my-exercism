@@ -16,7 +16,7 @@ exercism_builder_group = parser.add_mutually_exclusive_group(required=False)
 exercism_builder_group.add_argument("--token", type=str)
 exercism_builder_group.add_argument("--config", type=str, default="config.json")
 
-subimage_group = parser.add_mutually_exclusive_group(required=True)
+subimage_group = parser.add_mutually_exclusive_group(required=False)
 subimage_group.add_argument("--all",  action='store_true')
 subimage_group.add_argument("--subimages", type=str, nargs="+", choices=TRACKS)
 
@@ -52,7 +52,9 @@ if __name__ == "__main__":
             images = TRACKS
         elif args.subimages:
             images = args.subimages
-        
+        else:
+          exit(0)
+
         _build_docker_subdirs(images, force=args.force)
 
     except Exception as e:
