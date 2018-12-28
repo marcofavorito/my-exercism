@@ -21,14 +21,15 @@ subimage_group.add_argument("--all",  action='store_true')
 subimage_group.add_argument("--subimages", type=str, nargs="+", choices=TRACKS)
 
 
-def _build_docker_exercism(token):
-    os.system("docker build -t exercism . --build-arg EXERCISM_TOKEN={}"
-            .format(token))
+def _build_docker_exercism(token, force=False):
+    os.system("docker build {1} -t exercism . --build-arg EXERCISM_TOKEN={0}"
+            .format(token, "--no-cache" if force else ""))
 
 def _build_docker_subdirs(subdirs, force=False):
     for subdir in subdirs:
         if subdir in IGNORE_DIRS: continue
-        os.system(" docker build {1} -t exercism-{0} -f {0}/Dockerfile {0}".format(subdir, "--no-cache" if force else ""))
+        os.system(" docker build {1} -t exercism-{0} -f {0}/Dockerfile {0}"
+            .format(subdir, "--no-cache" if force else ""))
 
 def _read_token_from_config_file(config_file):
     return json.loads(open("config.json").read())["token"]
@@ -45,7 +46,7 @@ if __name__ == "__main__":
         
         if token:
             print("Configuring exercism with token={}".format(token))
-            _build_docker_exercism(token)
+            _build_docker_exercism(token, force=args.token is not None)
         
         images = None
         if args.all:

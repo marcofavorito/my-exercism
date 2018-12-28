@@ -2,8 +2,8 @@ FROM ubuntu:18.04
 
 USER root
 
-RUN apt-get update && \
-    apt-get install -y sudo && \
+RUN apt-get update
+RUN apt-get install -y sudo && \
     apt-get install -y apt-utils
 
 RUN HOME=/home/default && \
