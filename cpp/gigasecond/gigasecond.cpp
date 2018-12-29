@@ -1,8 +1,7 @@
 #include "gigasecond.h"
 
-seconds gigasecond::GIGASECOND = seconds(1000000000);
-
-const ptime gigasecond::advance(const ptime p){
-    ptime result = p + gigasecond::GIGASECOND;
-    return result;
+const boost::posix_time::ptime gigasecond::advance(const boost::posix_time::ptime p){
+  boost::posix_time::ptime result = p + gigasecond::GIGASECOND;
+  return result;
 }
+
