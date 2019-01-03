@@ -49,3 +49,7 @@ config.json
 # kotlin
 .gradle
 
+# csharp
+csharp/**/bin/
+csharp/**/obj/
+

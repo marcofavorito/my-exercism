@@ -35,5 +35,5 @@ RUN sudo cp /home/default/exercism/exercism /usr/local/bin
 
 RUN exercism configure --token=$EXERCISM_TOKEN --workspace /work
 
-RUN sudo apt-get install -y nano vim curl gcc cmake tmux
+RUN sudo apt-get install -y nano vim curl gcc cmake tmux gnupg2
 
