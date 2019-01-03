@@ -17,7 +17,6 @@ BOOST_AUTO_TEST_CASE(fourteen)
     BOOST_REQUIRE_EQUAL("fourteen", say::in_english(14ULL));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(twenty)
 {
     BOOST_REQUIRE_EQUAL("twenty", say::in_english(20ULL));
@@ -48,10 +47,12 @@ BOOST_AUTO_TEST_CASE(one_thousand)
     BOOST_REQUIRE_EQUAL("one thousand", say::in_english(1000ULL));
 }
 
+
 BOOST_AUTO_TEST_CASE(one_thousand_two_hundred_thirty_four)
 {
     BOOST_REQUIRE_EQUAL("one thousand two hundred thirty-four", say::in_english(1234ULL));
 }
+
 
 BOOST_AUTO_TEST_CASE(one_million)
 {
@@ -92,4 +93,7 @@ BOOST_AUTO_TEST_CASE(raises_an_error_for_one_trillion)
 {
     BOOST_REQUIRE_THROW(say::in_english(1000ULL*1000ULL*1000ULL*1000ULL), std::domain_error);
 }
+
+#if defined(EXERCISM_RUN_ALL_TESTS)
+
 #endif
