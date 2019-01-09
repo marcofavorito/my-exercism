@@ -1,6 +1,7 @@
 #ifndef SIEVE_H
 #define SIEVE_H
 
+#include <vector>
 #include <set>
 
 namespace sieve{
