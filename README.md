@@ -7,7 +7,7 @@ My [Exercism](https://exercism.io) solutions.
 
       python build-img.py --token <your-token>
 
-- build the Exercism image with configuration file:
+- build the Exercism image with configuration file (a json file with the field "token"):
 
       python build-img.py --config <path-to-config.json>
 
@@ -22,7 +22,6 @@ My [Exercism](https://exercism.io) solutions.
 - run the Exercism container:
 
       ./run-img.sh
-
 
 - run the Exercism container for a specific track:
 
