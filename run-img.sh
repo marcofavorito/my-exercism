@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
+DOCKER_IMAGES_HOME="./.dotfiles/docker"
+RUN_SCRIPT="scripts/docker-run.sh"
+
 if [ $# == 0 ]; then
-  docker run -it -w /work -v "$(pwd):/work" exercism /bin/bash  
+  ${DOCKER_IMAGES_HOME}/my-exercism/${RUN_SCRIPT}
   exit 0
 fi
 

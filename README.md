@@ -1,5 +1,5 @@
 # my-exercism
-My Exercism solutions.
+My [Exercism](https://exercism.io) solutions.
 
 ## Using the Docker image
 

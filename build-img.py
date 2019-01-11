@@ -25,7 +25,8 @@ subimage_group.add_argument("--subimages", type=str, nargs="+", choices=TRACKS)
 
 
 def _build_docker_exercism(token, force=False):
-    os.system("docker build {1} -t exercism . --build-arg EXERCISM_TOKEN={0}"
+    os.system(".dotfiles/docker/my-exercism/scripts/docker-build-img.sh {1}"
+                "--build-arg EXERCISM_TOKEN={0} --"
             .format(token, "--no-cache" if force else ""))
 
 def _build_docker_subdirs(subdirs, force=False):
