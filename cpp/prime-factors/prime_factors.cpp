@@ -10,7 +10,7 @@ std::vector<int> prime_factors::of(unsigned int n){
     result.push_back(2);
   }
 
-  double n_sqrt = sqrt(n);
+  double n_sqrt = sqrt(temp);
   for (p = 3; p <= n_sqrt; p+=2){
     while (temp % p == 0){
       result.push_back(p);
