@@ -32,7 +32,7 @@ def _build_docker_exercism(token, force=False):
 def _build_docker_subdirs(subdirs, force=False):
     for subdir in subdirs:
         if subdir in IGNORE_DIRS: continue
-        os.system(" docker build {1} -t exercism-{0} -f {0}/Dockerfile {0}"
+        os.system(".dotfiles/docker/{0}/scripts/docker-build-img.sh {1} --"
             .format(subdir, "--no-cache" if force else ""))
 
 def _read_token_from_config_file(config_file):
