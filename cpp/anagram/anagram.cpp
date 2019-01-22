@@ -1,5 +1,4 @@
 #include "anagram.h" 
-#include <iostream>
 
 anagram::anagram::anagram(std::string word) {
     this->word = word;
@@ -37,7 +36,6 @@ bool anagram::anagram::is_anagram(std::string word){
 
     if (counts.size() != this->counts.size()) return false;
     for(auto pair : counts){
-        std::cout << pair.first << " " << pair.second << std::endl;
         if (this->counts.find(pair.first) == this->counts.end()) return false;
         if (this->counts[pair.first] != pair.second) return false;
     }
