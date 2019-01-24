@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <regex>
+#include <cmath>
 
 namespace crypto_square{
     class cipher{

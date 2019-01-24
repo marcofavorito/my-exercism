@@ -7,7 +7,6 @@ BOOST_AUTO_TEST_CASE(normalize_capitals)
     BOOST_REQUIRE_EQUAL("hello", crypto_square::cipher("Hello").normalize_plain_text());
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(normalize_spaces)
 {
     BOOST_REQUIRE_EQUAL("hithere", crypto_square::cipher("Hi there").normalize_plain_text());
@@ -62,10 +61,12 @@ BOOST_AUTO_TEST_CASE(cipher_text_empty_phrase)
 
 BOOST_AUTO_TEST_CASE(cipher_text_long_phrase)
 {
+    
     BOOST_REQUIRE_EQUAL("imtgdvsfearwermayoogoanouuiontnnlvtwttddesaohghnsseoau",
         crypto_square::cipher("If man was meant to stay on the ground, god would have given us roots.").cipher_text());
 }
 
+#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(normalized_cipher_text_empty)
 {
     BOOST_REQUIRE_EQUAL("",
