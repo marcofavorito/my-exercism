@@ -2,7 +2,7 @@ real((R, _), R).
 imaginary((_, I), I).
 
 conjugate((R, I), (R, In)) :-
-  In is 0 - I.
+  In is - I.
 
 abs((R, I), AbsR) :-
    AbsR is (R^2 + I^2)^(1/2).
@@ -21,7 +21,8 @@ mul((Ra, Ia), (Rb, Ib), (Rc, Ic)) :-
   Ic is Ra * Ib + Rb * Ia.
 
 div((Ra, Ia), (Rb, Ib), (Rc, Ic)) :-
-  Rc is (Ra * Rb + Ia * Ib)/(Rb * Rb + Ib * Ib),
-  Ic is (Ia * Rb - Ra * Ib)/(Rb * Rb + Ib * Ib).
+  Den is (Rb * Rb + Ib * Ib), 
+  Rc is (Ra * Rb + Ia * Ib)/Den,
+  Ic is (Ia * Rb - Ra * Ib)/Den.
 
 
