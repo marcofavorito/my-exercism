@@ -1,0 +1,19 @@
+
+
+.globl octal_convert
+
+octal_convert:
+        li      $v0, 0
+
+loop:
+        lb      $t0, 0($a0)
+        beq     $t0, $zero, end
+        addi    $t1, $t0, -48
+        add     $v0, $v0, $t1
+        sll     $v0, $v0, 3
+        addi    $a0, $a0, 1
+        j       loop
+end:
+        sra     $v0, $v0, 3
+        jr      $ra
+
