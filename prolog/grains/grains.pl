@@ -1,11 +1,7 @@
-square(1, 1) :- !.
-
-square(SquareNumber, Value) :-
-	SquareNumber > 1, not(SquareNumber > 64),
-	PreviousSquare is SquareNumber - 1,
-	square(PreviousSquare, PreviousValue),
-	Value is 2 * PreviousValue,
-	!.
+square(X, Y) :-
+    X > 0,
+    X < 65,
+    Y is 2 ** (X - 1).
 
 total(Value) :- subtotal(Value, 64).
 
