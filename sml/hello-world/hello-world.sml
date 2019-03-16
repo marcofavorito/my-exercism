@@ -1,0 +1,2 @@
+fun hello () =
+    "Hello, World!";
