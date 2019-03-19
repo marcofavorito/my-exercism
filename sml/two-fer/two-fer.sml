@@ -1,2 +1,1 @@
-fun name NONE = "One for you, one for me." 
-  | name (SOME input) = "One for " ^ input ^ ", one for me."; 
+fun name (input: string option) = "One for " ^ Option.getOpt(input, "you") ^ ", one for me." 
